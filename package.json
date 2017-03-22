@@ -1,0 +1,18 @@
+{
+  "name": "npmsource",
+  "version": "1.0.0",
+  "description": "fetch npm package source code, or browse npm package source code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "npmsource": "./index.js"
+  },
+  "keywords": [
+    "npm",
+    "source code"
+  ],
+  "author": "msyesyan@gmail.com",
+  "license": "ISC"
+}
