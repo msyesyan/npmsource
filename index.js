@@ -51,4 +51,33 @@ program
   .option('-P, --peer', 'fetch peerDependencies, work when --package')
   .action(fetch);
 
+program
+  .command('edit [module]')
+  .description('alias for npm edit, only work for ./node_modules')
+  .action((module) => { shell.exec(`npm edit ${module}`) });
+
+program
+  .command('browse [module]')
+  .description('alias of npm repo')
+  .action((module) => { shell.exec(`npm repo ${module}`) });
+
+program
+  .command('open [module]')
+  .description('open soruce code of module')
+  .option('-e, --editor', 'editor, default will be atom', 'atom')
+  .action((module, options) => {
+    shell.cd(`${npmsourceHome}/${module}`);
+    let editor = options.editor || 'atom';
+    shell.exec(`${editor} .`);
+  })
+
+program
+  .command('checkout <module> <tag|commit>')
+  .alias('co')
+  .description('checkout module version by git tag or commit hash')
+  .action((module, version) => {
+    shell.cd(`${npmsourceHome}/${module}`);
+    shell.exec(`git checkout ${version}`);
+  })
+
 program.parse(process.argv);
