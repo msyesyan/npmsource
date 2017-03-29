@@ -1,6 +1,6 @@
 {
   "name": "npmsource",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "fetch npm package source code, or browse npm package source code",
   "main": "index.js",
   "scripts": {

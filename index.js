@@ -10,9 +10,9 @@ const npmsourceHome = `${homedir}/.npmsource`;
 function fetch(module, others=[], options) {
   let modules = [module, ...others].filter(Boolean);
   if (modules.length === 0) {
-    let packageFile = options.package;
-    if (packageFile && fs.existsSync(path.resolve(packageFile))) {
-      let packages = require(path.resolve('./package.json'));
+    let packageFile = path.resolve(options.package);
+    if (packageFile && shell.test('-f', packageFile)) {
+      let packages = require(packageFile);
       modules = [...modules, ...Object.keys(
         Object.assign({}, packages.dependencies, (options.all || options.dev) ? packages.devDependencies : {}, (options.all || options.peer) ? packages.peerDependencies : {})
       )];
