@@ -1,6 +1,6 @@
 {
   "name": "npmsource",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "fetch npm package source code, or browse npm package source code",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,10 @@
     "source code"
   ],
   "author": "msyesyan@gmail.com",
+  "bugs": {
+    "url": "https://github.com/msyesyan/npmsource/issues",
+    "email": "msyesyan@gamil.com"
+  },
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
